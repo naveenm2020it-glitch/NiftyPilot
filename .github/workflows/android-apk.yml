@@ -26,7 +26,7 @@ jobs:
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.24.5'
+          flutter-version: '3.32.8'
           channel: stable
           cache: true
 
@@ -42,11 +42,9 @@ jobs:
         run: flutter pub get
 
       - name: Analyze Dart source
-        continue-on-error: true
         run: flutter analyze
 
       - name: Run Flutter tests
-        continue-on-error: true
         run: flutter test
 
       - name: Build Android release APK
